@@ -3,7 +3,7 @@ roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
   - name: gantsign.oh-my-zsh
-  - name: avanov.pyenv
+  - name: quocvu.pyenv-python
   - name: ctorgalson.nvm
     version: v2.1.0
 

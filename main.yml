@@ -23,7 +23,7 @@
       tags: ['zsh']
       users:
         - username: "{{ lookup('env', 'USER') }}"
-    - role: avanov.pyenv
+    - role: quocvu.pyenv-python
       when: configure_pyenv
       tags: ['pyenv']
     - role: ctorgalson.nvm
