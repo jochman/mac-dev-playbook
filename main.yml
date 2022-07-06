@@ -12,20 +12,20 @@
       tags: ['always']
 
   roles:
-    # - role: elliotweiser.osx-command-line-tools
-    # - role: geerlingguy.mac.homebrew
-    #   tags: ['homebrew']
-    # - role: geerlingguy.dotfiles
-    #   when: configure_dotfiles
-    #   tags: ['dotfiles']
-    # - role: gantsign.oh-my-zsh
-    #   when: configure_zsh
-    #   tags: ['zsh']
-    #   users:
-    #     - username: "{{ lookup('env', 'USER') }}"
-    # - role: avanov.pyenv
-    #   when: configure_pyenv
-    #   tags: ['pyenv']
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+      tags: ['homebrew']
+    - role: geerlingguy.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
+    - role: gantsign.oh-my-zsh
+      when: configure_zsh
+      tags: ['zsh']
+      users:
+        - username: "{{ lookup('env', 'USER') }}"
+    - role: avanov.pyenv
+      when: configure_pyenv
+      tags: ['pyenv']
     - role: ctorgalson.nvm
       when: configure_nvm
       tags: ['node']
