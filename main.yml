@@ -24,7 +24,7 @@
     - role: avanov.pyenv
       when: configure_pyenv
       tags: ['pyenv']
-    - role: grzegorznowak.ansible-nvm-node
+    - role: grzegorznowak.nvm_node
       when: configure_nvm
       tags: ['node']
 
