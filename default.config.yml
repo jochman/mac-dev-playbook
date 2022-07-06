@@ -12,15 +12,12 @@ dotfiles_files:
   - .zshrc
   - .zprofile
 
-node_version: 16
-python_version: 3.8.13
-
 homebrew_installed_packages:
   - aws-sam-cli
   - awscli
   - gh
   - localstack
-
+  - nvm
 
 homebrew_taps:
   - homebrew/core
@@ -63,6 +60,4 @@ pyenv_python_versions:
 
 # Node & NVM
 configure_nvm: yes
-nvm_user:
-  name: "{{ lookup('env', 'USER') }}"
-nvm_rc_file_create: no
+node_version: 16

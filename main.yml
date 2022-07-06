@@ -23,14 +23,15 @@
     - role: agoloncser.pyenv
       when: configure_pyenv
       tags: ['pyenv']
-    - role: ctorgalson.nvm
-      when: configure_nvm
-      tags: ['node']
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
 
   tasks:
+    - name: install node via nvm
+      shell: "nvm install {{ node_version }} && nvm use {{ node_version }} && nvm alias default {{ node_version }}"
+      when: configure_nvm
+      tags: ['node']
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
     - block:
