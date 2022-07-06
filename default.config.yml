@@ -12,8 +12,10 @@ dotfiles_files:
   - .zshrc
   - .zprofile
 
+node_version: 16
+python_version: 3.8.13
+
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
   - pyenv
   - nvm
   - aws-sam-cli
@@ -49,9 +51,6 @@ npm_packages:
     state: present # present/absent/latest, default: present
     version: "2.62.2" # default: N/A
 pip_packages: []
-# - name: mkdocs
-#   state: present # present/absent/latest, default: present
-#   version: "0.16.3" # default: N/A
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []

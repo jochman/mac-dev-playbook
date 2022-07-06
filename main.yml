@@ -23,9 +23,13 @@
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
     - name: Install node and set version
-            become: yes
-            become_user: root
-            shell: nvm install 8.11.3
+      become: yes
+      become_user: root
+      shell: source ~/.nvm/nvm.sh && nvm install {{ node_version }} && nvm use {{ node_version }}
+    - name: Install python and set version
+      become: yes
+      become_user: root
+      shell: source ~/.pyenv/bin/pyenv && pyenv install {{ python_version }} && pyenv global {{ python_version }}
     - block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"
