@@ -20,8 +20,6 @@
       tags: ['dotfiles']
 
   tasks:
-    - import_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages']
     - name: Install node and set version
       become: yes
       become_user: root
@@ -30,6 +28,8 @@
       become: yes
       become_user: root
       shell: source ~/.pyenv/bin/pyenv && pyenv install {{ python_version }} && pyenv global {{ python_version }}
+    - import_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']
     - block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"
