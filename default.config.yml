@@ -28,6 +28,7 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - aws/tap
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
