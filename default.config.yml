@@ -55,6 +55,9 @@ pip_packages: []
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
 
+# ZSH
+configure_zsh: yes
+
 # Pyenv
 configure_pyenv: yes
 pyenv_path: "{{ home }}/pyenv"
