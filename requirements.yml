@@ -2,6 +2,9 @@
 roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
+  - name: gantsign.oh-my-zsh
+  - name: avanov.pyenv
+  - name: grzegorznowak.nvm_node
 
 collections:
   - name: geerlingguy.mac

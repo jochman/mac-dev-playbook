@@ -18,16 +18,17 @@
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
+    - role: gantsign.oh-my-zsh
+      when: configure_zsh
+      tags: ['zsh']
+    - role: avanov.pyenv
+      when: configure_pyenv
+      tags: ['pyenv']
+    - role: ansible-nvm-node
+      when: configure_nvm
+      tags: ['node']
 
   tasks:
-    - name: Install node and set version
-      become: yes
-      become_user: root
-      shell: source ~/.nvm/nvm.sh && nvm install {{ node_version }} && nvm use {{ node_version }}
-    - name: Install python and set version
-      become: yes
-      become_user: root
-      shell: source ~/.pyenv/bin/pyenv && pyenv install {{ python_version }} && pyenv global {{ python_version }}
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
     - block:

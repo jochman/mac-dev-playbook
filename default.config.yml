@@ -17,7 +17,6 @@ python_version: 3.8.13
 
 homebrew_installed_packages:
   - pyenv
-  - nvm
   - aws-sam-cli
   - awscli
   - gh
@@ -55,3 +54,18 @@ pip_packages: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# Pyenv
+configure_pyenv: yes
+pyenv_path: "{{ home }}/pyenv"
+pyenv_owner: "{{ instance_owner }}"
+pyenv_global: "3.8.13"
+pyenv_update_git_install: no
+pyenv_enable_autocompletion: no
+pyenv_python_versions:
+  - "3.8.13"
+
+# Node & NVM
+configure_nvm: yes
+nvm_node_version: "16"              # the node version to install via nvm
+nvm_install_globally: []          # list of node versions to install globally
