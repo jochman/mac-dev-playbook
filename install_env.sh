@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-xcode-select --install && \
+xcode-select --install || \
 
 pip3 install --upgrade pip && pip3 install ansible && \
 
