@@ -6,6 +6,22 @@
 
 This playbook installs and configures most of the software I use on my Mac for web and software development. Some things in macOS are slightly difficult to automate, so I still have a few manual installation steps, but at least it's all documented here.
 
+run to following script:
+
+```shell
+xcode-select --install
+
+pip3 install --upgrade pip && pip3 install ansible
+
+git clone https://github.com/jochman/mac-dev-playbook.git ~/.mac-dev-playbook && cd ~/.mac-dev-playbook
+
+export PATH=$PATH:$HOME/Library/Python/3.8/bin
+
+ansible-galaxy install -r requirements.yml
+
+ansible-playbook main.yml --ask-become-pass
+```
+
 ## Installation
 
   1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
