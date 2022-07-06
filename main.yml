@@ -21,6 +21,8 @@
     - role: gantsign.oh-my-zsh
       when: configure_zsh
       tags: ['zsh']
+      users:
+        - username: "{{ instance_owner }}"
     - role: avanov.pyenv
       when: configure_pyenv
       tags: ['pyenv']
