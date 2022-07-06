@@ -64,6 +64,7 @@ pyenv_update_git_install: no
 pyenv_enable_autocompletion: no
 pyenv_python_versions:
   - "3.8.13"
+pyenv_virtualenvs: []
 
 # Node & NVM
 configure_nvm: yes
