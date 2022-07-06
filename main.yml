@@ -15,9 +15,6 @@
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
       tags: ['homebrew']
-    - role: geerlingguy.dotfiles
-      when: configure_dotfiles
-      tags: ['dotfiles']
     - role: gantsign.oh-my-zsh
       when: configure_zsh
       tags: ['zsh']
@@ -29,6 +26,9 @@
     - role: ctorgalson.nvm
       when: configure_nvm
       tags: ['node']
+    - role: geerlingguy.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
 
   tasks:
     - import_tasks: tasks/extra-packages.yml
