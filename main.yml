@@ -29,7 +29,7 @@
 
   tasks:
     - name: install node via nvm
-      shell: "nvm install {{ node_version }} && nvm use {{ node_version }} && nvm alias default {{ node_version }}"
+      shell: "source ~/.nvm.nvm.sh && nvm install {{ node_version }} && nvm use {{ node_version }} && nvm alias default {{ node_version }}"
       when: configure_nvm
       tags: ['node']
     - import_tasks: tasks/extra-packages.yml
