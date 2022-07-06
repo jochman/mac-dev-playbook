@@ -58,8 +58,8 @@ configure_zsh: yes
 
 # Pyenv
 configure_pyenv: yes
-python_versions:
-  - 3.8.13
+pyenv_python_versions:
+  - version: 3.8.13
 
 # Node & NVM
 configure_nvm: yes
