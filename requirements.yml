@@ -4,7 +4,8 @@ roles:
   - name: geerlingguy.dotfiles
   - name: gantsign.oh-my-zsh
   - name: avanov.pyenv
-  - name: grzegorznowak.nvm_node
+  - name: ctorgalson.nvm
+    version: v2.1.0
 
 collections:
   - name: geerlingguy.mac

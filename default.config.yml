@@ -4,7 +4,6 @@ downloads: ~/.ansible-downloads/
 configure_dotfiles: true
 
 configure_sudoers: false
-instance_owner: "{{ instance_owner }}"
 
 dotfiles_repo: https://github.com/jochman/dotfiles.git
 dotfiles_repo_accept_hostkey: true
@@ -17,7 +16,6 @@ node_version: 16
 python_version: 3.8.13
 
 homebrew_installed_packages:
-  - pyenv
   - aws-sam-cli
   - awscli
   - gh
@@ -50,7 +48,7 @@ homebrew_cask_apps:
 npm_packages:
   - name: serverless
     state: present # present/absent/latest, default: present
-    version: "2.62.2" # default: N/A
+    version: "2.62.0" # default: N/A
 pip_packages: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
@@ -61,8 +59,7 @@ configure_zsh: yes
 
 # Pyenv
 configure_pyenv: yes
-pyenv_path: "{{ home }}/pyenv"
-pyenv_owner: "{{ instance_owner }}"
+pyenv_path: "~/.pyenv"
 pyenv_global: "3.8.13"
 pyenv_update_git_install: no
 pyenv_enable_autocompletion: no
@@ -71,5 +68,6 @@ pyenv_python_versions:
 
 # Node & NVM
 configure_nvm: yes
-nvm_node_version: "16"              # the node version to install via nvm
-nvm_install_globally: []          # list of node versions to install globally
+nvm_user:
+  name: "{{ lookup('env', 'USER') }}"
+nvm_rc_file_create: no
