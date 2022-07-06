@@ -4,6 +4,7 @@ downloads: ~/.ansible-downloads/
 configure_dotfiles: true
 
 configure_sudoers: false
+instance_owner: "{{ instance_owner }}"
 
 dotfiles_repo: https://github.com/jochman/dotfiles.git
 dotfiles_repo_accept_hostkey: true
