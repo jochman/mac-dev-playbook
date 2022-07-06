@@ -32,8 +32,11 @@
       shell: "source ~/.nvm/nvm.sh && nvm install {{ node_version }} && nvm use {{ node_version }} && nvm alias default {{ node_version }}"
       when: configure_nvm
       tags: ['node']
-    - import_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages']
+    - name: install serverless
+      shell: "source ~/.nvm/nvm.sh && npm install -g serverless@2.62.0"
+      when: configure_nvm
+      tags: ['node']
+
     - block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"
