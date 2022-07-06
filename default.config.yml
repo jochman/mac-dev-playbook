@@ -62,8 +62,8 @@ pyenv_path: "~/.pyenv"
 pyenv_global: "3.8.13"
 pyenv_update_git_install: no
 pyenv_enable_autocompletion: no
-pyenv_python_versions:
-  - "3.8.13"
+# pyenv_python_versions:
+#   - "3.8.13"
 pyenv_virtualenvs: []
 
 # Node & NVM
